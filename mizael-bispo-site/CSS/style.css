@@ -1,0 +1,631 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: #0f0f0f;
+  color: #e8e8e8;
+  line-height: 1.6;
+}
+
+/* MENU */
+header {
+  position: sticky;
+  top: 0;
+  background: rgba(15,15,15,0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #2a2a2a;
+  z-index: 100;
+}
+
+.menu {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #d4a44a;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.menu-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+
+.menu-links a {
+  color: #e8e8e8;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.menu-links a:hover { color: #d4a44a; }
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #e8e8e8;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* HERO */
+.hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 24px;
+  background: radial-gradient(ellipse at top, #1a1408 0%, #0f0f0f 70%);
+}
+
+.avatar {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #d4a44a, #8b6b1f);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #0f0f0f;
+  margin: 0 auto 28px;
+  box-shadow: 0 0 60px rgba(212,164,74,0.3);
+  letter-spacing: 4px;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 16px;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.frase {
+  font-style: italic;
+  color: #d4a44a;
+  font-size: 1.15rem;
+  margin-bottom: 32px;
+}
+
+.hero-botoes {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 14px 32px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: inline-block;
+}
+
+.btn-spotify {
+  background: #1db954;
+  color: #fff;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #d4a44a;
+  border: 2px solid #d4a44a;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+
+/* SEÇÕES */
+section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.subtitulo {
+  text-align: center;
+  color: #999;
+  margin-bottom: 48px;
+}
+
+/* CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  padding: 24px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.card:hover {
+  border-color: #d4a44a;
+  transform: translateY(-4px);
+}
+
+.card h3 {
+  color: #d4a44a;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+.card p { color: #888; font-size: 0.9rem; }
+
+/* SOBRE AS OBRAS */
+.sobre-obras {
+  background: #141414;
+  border-left: 4px solid #d4a44a;
+  border-radius: 8px;
+  padding: 32px;
+  margin: 0 24px 60px;
+  max-width: 900px;
+}
+
+.sobre-obras h2 { text-align: left; font-size: 1.4rem; margin-bottom: 16px; }
+.sobre-obras p { color: #bbb; }
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 40px 24px;
+  border-top: 1px solid #2a2a2a;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+footer a { color: #d4a44a; text-decoration: none; }
+
+/* MOBILE */
+@media (max-width: 700px) {
+  .menu-toggle { display: block; }
+  .menu-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #141414;
+    flex-direction: column;
+    padding: 20px;
+    gap: 16px;
+    border-bottom: 1px solid #2a2a2a;
+  }
+  .menu-links.ativo { display: flex; }
+  .hero h1 { font-size: 2rem; }
+  .avatar { width: 120px; height: 120px; font-size: 2.5rem; }
+} 
+/* PÁGINAS INTERNAS */
+.pagina {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 80px 24px;
+  text-align: center;
+}
+
+.pagina h1 {
+  font-size: 2.2rem;
+  color: #fff;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.pagina .avatar {
+  margin: 0 auto 40px;
+}
+
+.bio {
+  font-size: 1.05rem;
+  color: #ccc;
+  text-align: left;
+  line-height: 1.9;
+  margin-bottom: 48px;
+}
+
+.bio strong { color: #d4a44a; }
+
+.cta-spotify {
+  text-align: center;
+  margin-top: 40px;
+} 
+/* DISCOGRAFIA */
+.discografia {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.item-disco {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-left: 4px solid #d4a44a;
+  border-radius: 10px;
+  padding: 28px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.item-disco:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(212,164,74,0.15);
+}
+
+.item-disco h2 {
+  text-align: left;
+  font-size: 1.5rem;
+  color: #d4a44a;
+  margin-bottom: 6px;
+}
+
+.item-disco .tipo {
+  color: #888;
+  font-size: 0.9rem;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.item-disco .descricao {
+  color: #bbb;
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+.item-disco .btn {
+  padding: 10px 24px;
+  font-size: 0.9rem;
+} 
+/* CONTATO */
+.contato-box {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  padding: 32px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.contato-box h2 {
+  font-size: 1.2rem;
+  color: #d4a44a;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.email-link {
+  color: #fff;
+  font-size: 1.2rem;
+  text-decoration: none;
+  border-bottom: 2px solid #d4a44a;
+  padding-bottom: 4px;
+  transition: color 0.3s;
+}
+
+.email-link:hover {
+  color: #d4a44a;
+} 
+/* LETRAS - ÍNDICE */
+.album-bloco {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-left: 4px solid #d4a44a;
+  border-radius: 10px;
+  padding: 28px;
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.album-bloco h2 {
+  text-align: left;
+  font-size: 1.3rem;
+  color: #d4a44a;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.lista-letras {
+  list-style: none;
+  padding: 0;
+}
+
+.lista-letras li {
+  margin-bottom: 10px;
+}
+
+.lista-letras a {
+  color: #ddd;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 8px 0 8px 20px;
+  display: inline-block;
+  position: relative;
+  transition: color 0.3s, padding 0.3s;
+}
+
+.lista-letras a::before {
+  content: '♪';
+  position: absolute;
+  left: 0;
+  color: #d4a44a;
+}
+
+.lista-letras a:hover {
+  color: #d4a44a;
+  padding-left: 26px;
+} 
+/* PÁGINA DE LETRA INDIVIDUAL */
+.letra-pagina {
+  max-width: 700px;
+  text-align: left;
+}
+
+.voltar {
+  display: inline-block;
+  color: #d4a44a;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-bottom: 24px;
+  transition: opacity 0.3s;
+}
+
+.voltar:hover { opacity: 0.7; }
+
+.letra-pagina h1 {
+  text-align: left;
+  font-size: 1.9rem;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.tipo-letra {
+  color: #888;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+.letra-conteudo {
+  background: #141414;
+  border-left: 3px solid #d4a44a;
+  border-radius: 8px;
+  padding: 32px;
+  margin-bottom: 32px;
+}
+
+.letra-conteudo p {
+  color: #ddd;
+  line-height: 2;
+  margin-bottom: 24px;
+  font-size: 1.05rem;
+}
+
+.letra-conteudo p:last-child { margin-bottom: 0; }
+
+.letra-acoes {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.creditos {
+  text-align: center;
+  color: #666;
+  font-size: 0.85rem;
+  font-style: italic;
+} 
+/* ===== BOTÕES DE PLATAFORMAS ===== */
+.plataformas {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #2a2a2a;
+}
+
+.plataformas-titulo {
+  font-size: 0.85rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+.botoes-plataformas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.btn-plataforma {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: #fff;
+  background: #2a2a2a;
+  border: 1px solid #3a3a3a;
+  transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+  opacity: 0.85;
+}
+
+.btn-plataforma:hover {
+  transform: translateY(-2px);
+  opacity: 1;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.btn-plataforma .icone {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+/* Cores por plataforma */
+.btn-spotify       { background: #1DB954; border-color: #1DB954; }
+.btn-amazon        { background: #00A8E1; border-color: #00A8E1; }
+.btn-youtube       { background: #FF0000; border-color: #FF0000; }
+.btn-apple         { background: #FA243C; border-color: #FA243C; }
+.btn-deezer        { background: #A238FF; border-color: #A238FF; }
+
+/* Mobile */
+@media (max-width: 600px) {
+  .btn-plataforma {
+    font-size: 0.75rem;
+    padding: 7px 11px;
+  }
+} 
+/* Plataformas na página inicial */
+.hero .plataformas {
+  margin-top: 48px;
+  border-top: none;
+  padding-top: 0;
+}
+/* Botão do canal YouTube (destaque) */
+.btn-youtube-canal {
+  background: #FF0000;
+  border-color: #FF0000;
+  font-weight: 600;
+  box-shadow: 0 0 12px rgba(255,0,0,0.3);
+}
+
+.btn-youtube-canal:hover {
+  box-shadow: 0 0 20px rgba(255,0,0,0.6);
+  opacity: 1;
+} 
+
+.hero .plataformas-titulo {
+  color: #999;
+} 
+/* SEÇÃO YOUTUBE */
+.youtube-destaque {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 24px;
+}
+
+.youtube-conteudo {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-left: 4px solid #FF0000;
+  border-radius: 12px;
+  padding: 48px 32px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.youtube-conteudo::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(255,0,0,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.youtube-icone {
+  font-size: 3rem;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.youtube-conteudo h2 {
+  font-size: 1.6rem;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.youtube-conteudo p {
+  color: #999;
+  max-width: 500px;
+  margin: 0 auto 28px;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.btn-youtube-grande {
+  display: inline-block;
+  background: #FF0000;
+  color: #fff;
+  padding: 14px 36px;
+  border-radius: 40px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  z-index: 1;
+}
+
+.btn-youtube-grande:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(255,0,0,0.4);
+}
+
+@media (max-width: 600px) {
+  .youtube-conteudo {
+    padding: 36px 20px;
+  }
+  .youtube-conteudo h2 {
+    font-size: 1.3rem;
+  }
+  .btn-youtube-grande {
+    padding: 12px 26px;
+    font-size: 0.9rem;
+  }
+} 
+/* FOTO DO ARTISTA */
+.avatar-foto {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 28px;
+  display: block;
+  box-shadow: 0 0 60px rgba(212,164,74,0.3);
+  border: 3px solid #d4a44a;
+}
+
+@media (max-width: 700px) {
+  .avatar-foto {
+    width: 150px;
+    height: 150px;
+  }
+} 
